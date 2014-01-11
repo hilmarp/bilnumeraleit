@@ -1,0 +1,74 @@
+<form>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row collapse">
+        <div class="small-9 columns">
+          <input type="text" placeholder="Bílnúmer" maxlength="6" ng-model="bilnumer" required />
+        </div>
+        <div class="small-3 columns">
+          <button class="button postfix" ng-click="leita()">Leita</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="row" ng-hide="erBillTil()">
+	<div class="small-12 columns">
+		<div data-alert class="alert-box">
+			Ekki er til ökutæki með þetta skráningarnúmer.
+			<a href="#" class="close">&times;</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div id="bill-info" class="small-12 columns">
+		<table ng-show="erBillTil()">
+			<tr>
+				<td>Skráningarnúmer:</td>
+				<td>{{bill.registryNumber}}</td>
+			</tr>
+			<tr>
+				<td>Fastanúmer:</td>
+				<td>{{bill.number}}</td>
+			</tr>
+			<tr>
+				<td>Verksmiðjunúmer:</td>
+				<td>{{bill.factoryNumber}}</td>
+			</tr>
+			<tr>
+				<td>Tegund:</td>
+				<td>{{bill.type}}</td>
+			</tr>
+			<tr>
+				<td>Undirtegund:</td>
+				<td>{{bill.subType}}</td>
+			</tr>
+			<tr>
+				<td>Litur:</td>
+				<td>{{bill.color}}</td>
+			</tr>
+			<tr>
+				<td>Fyrst skráður:</td>
+				<td>{{bill.registeredAt}}</td>
+			</tr>
+			<tr>
+				<td>Staða:</td>
+				<td>{{bill.status}}</td>
+			</tr>
+			<tr>
+				<td>Næsta aðalskoðun:</td>
+				<td>{{bill.nextCheck}}</td>
+			</tr>
+			<tr>
+				<td>C02 losun (gr/km):</td>
+				<td>{{bill.pollution}}</td>
+			</tr>
+			<tr>
+				<td>Eiginþyngd (kg):</td>
+				<td>{{bill.weight}}</td>
+			</tr>
+		</table>
+	</div>
+</div>

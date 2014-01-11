@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="bilnumerApp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bílnúmer</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body>
+
+    <div class="show-for-medium-up">
+      <div class="row">
+        <div class="medium-12 columns">
+          <div class="panel">
+            <h3>Leita í ökutækjaskrá.</h3>
+            <p>Hérna getur þú leitað í ökutækjaskrá.</p>
+            <p>Sláðu inn bílnúmer og ýttu á <em>Leita</em>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
+    <script src="http://code.angularjs.org/1.2.8/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
