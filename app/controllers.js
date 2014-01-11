@@ -1,7 +1,9 @@
 app.controller('BilnumerController', function ($scope, $http) {
 
+	var bilnumer = "";
+
 	$scope.leita = function () {
-		var bilnumer = $scope.bilnumer;
+		bilnumer = $scope.bilnumer;
 
 		$http.get('http://apis.is/car?number=' + bilnumer).success(function (data) {
 			console.log(data.results[0]);
@@ -14,6 +16,14 @@ app.controller('BilnumerController', function ($scope, $http) {
 			return false;
 		} else {
 			return true;
+		}
+	};
+
+	$scope.erBilnumer = function () {
+		if (bilnumer === "") {
+			return true;
+		} else {
+			return false;
 		}
 	};
 });
